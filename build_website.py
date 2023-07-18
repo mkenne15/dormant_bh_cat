@@ -51,10 +51,20 @@ def add_param_col(obj_param,soup,data):
         new_col.append(new_link)
     elif obj_param in data:
         if (obj_param == 'M1') or (obj_param == 'PB'):
+<<<<<<< HEAD
             if str(data[obj_param]["Value"])[0] == '>':
                 new_col.string = str(data[obj_param]["Value"])
             else:
                 new_col.string = str(data[obj_param]["Value"])+"±"+str(data[obj_param]["Error"])
+=======
+            new_col.string = str(data[obj_param]["Value"])+"±"+str(data[obj_param]["Error"])
+        elif (obj_param == 'Status'):
+            status_colurs = {'Confirmed': '#2ca02c', 'Candidate': '#ff7f0e'}
+            new_font = soup.new_tag('font')
+            new_font['color'] = status_colurs[data[obj_param]["Value"]]
+            new_font.string = str(data[obj_param]["Value"])
+            new_col.append(new_font)
+>>>>>>> Adding Column regarding objects status (confirmed/candidate)
         else:
             new_col.string = str(data[obj_param]["Value"])
     else:
@@ -115,7 +125,7 @@ def make_new_page(obj_data):
 
     # Adding a new row to the table for each JSON file that exists
     for i,obj_param in enumerate(obj_data):
-        if (obj_param == 'ID') or (obj_param == 'COMMENTS'):
+        if (obj_param == 'ID') or (obj_param == 'COMMENTS') or (obj_param == 'Status'):
             new_div = source_soup.new_tag("div")
             new_br = source_soup.new_tag("br")
             new_div.string = str(obj_param) + ": " + str(obj_data[obj_param]["Value"])
@@ -316,7 +326,7 @@ for i,temp_path in enumerate(json_list):
         bin_table_imposters_tag.append(new_row)
         make_new_page(data)
     else:
-        table_fields = ['ID','RAJ','DECJ','PB','Apparent Mag','M1','Discovery Channel']
+        table_fields = ['ID','RAJ','DECJ','PB','Apparent Mag','M1','Discovery Channel', 'Status']
         for field in table_fields:
           new_row.append(add_param_col(field,soup,data))
 
