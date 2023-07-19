@@ -51,20 +51,16 @@ def add_param_col(obj_param,soup,data):
         new_col.append(new_link)
     elif obj_param in data:
         if (obj_param == 'M1') or (obj_param == 'PB'):
-<<<<<<< HEAD
             if str(data[obj_param]["Value"])[0] == '>':
                 new_col.string = str(data[obj_param]["Value"])
             else:
                 new_col.string = str(data[obj_param]["Value"])+"±"+str(data[obj_param]["Error"])
-=======
-            new_col.string = str(data[obj_param]["Value"])+"±"+str(data[obj_param]["Error"])
         elif (obj_param == 'Status'):
             status_colurs = {'Confirmed': '#2ca02c', 'Candidate': '#ff7f0e'}
             new_font = soup.new_tag('font')
             new_font['color'] = status_colurs[data[obj_param]["Value"]]
             new_font.string = str(data[obj_param]["Value"])
             new_col.append(new_font)
->>>>>>> Adding Column regarding objects status (confirmed/candidate)
         else:
             new_col.string = str(data[obj_param]["Value"])
     else:
