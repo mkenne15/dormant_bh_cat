@@ -4,7 +4,7 @@
  "PB": {"Value": "4253.1", "Error": "98.5", "Ref": "A&A, Forthcoming article"},
  "Inclination": {"Value": "110.580", "Error": "0.095", "Ref": "A&A, Forthcoming article"},
  "Apparent Mag": {"Value": "11.23 (G)", "Ref": "A&A, Forthcoming article"},
- "K2": {"Value": "333.2", "Error": "0.2", "Ref": "A&A, Forthcoming article"},
+ "K2": {"Value": "-", "Error": "-", "Ref": "A&A, Forthcoming article"},
  "Parallax": {"Value": "1.6933", "Error": "0.0164", "Ref": "A&A, Forthcoming article"},
  "M(BH)": {"Value": "32.7", "Error": "0.82", "Ref": "A&A, Forthcoming article"},
  "M(Comp)": {"Value": "0.76", "Error": "0.05", "Ref": "A&A, Forthcoming article"},
